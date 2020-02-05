@@ -33,18 +33,18 @@ def scrape_page(url):
     html = scraperwiki.scrape(url)
     print html
     #now we use the lxml.html function imported above to convert 'html' into a new object, 'root'
-    root = lxml.html.fromstring(html)
+    #root = lxml.html.fromstring(html)
     #now we call another function on root, which we write - above
-    scrape_table(root)
+    #scrape_table(root)
 
 #START HERE: This is the part of the URL which all our pages share
 base_url = 'http://www.marinetraffic.com/en/ais/details/ships/'
 #And these are the numbers which we need to complete that URL to make each individual URL
 #This list has been compiled using the =JOIN formula in Google Docs on a column of mmsi numbers
-schoolIDs = ['563092500']
+mmsis = ['563092500']
 
 #go through the schoolIDs list above, and for each ID...
-for item in schoolIDs:
+for item in mmsis:
     #show it in the console
     print item
     #create a URL called 'next_link' which adds that ID to the end of the base_url variable
